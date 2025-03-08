@@ -1,4 +1,4 @@
-# Sports API Management System
+# Sports API Management System - Lets build this
 
 ## **Project Overview**
 This project demonstrates building a containerized API management system for querying sports data. It leverages **Amazon ECS (Fargate)** for running containers, **Amazon API Gateway** for exposing REST endpoints, and an external **Sports API** for real-time sports data. The project showcases advanced cloud computing practices, including API management, container orchestration, and secure AWS integrations.
@@ -63,11 +63,11 @@ aws ecr create-repository --repository-name sports-api --region us-east-1
 
 ### **Authenticate Build and Push the Docker Image**
 ```bash
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 288761775156.dkr.ecr.us-east-1.amazonaws.com
 
 docker build --platform linux/amd64 -t sports-api .
-docker tag sports-api:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/sports-api:sports-api-latest
-docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/sports-api:sports-api-latest
+docker tag sports-api:latest 288761775156.dkr.ecr.us-east-1.amazonaws.com/sports-api:sports-api-latest
+docker push 288761775156.dkr.ecr.us-east-1.amazonaws.com/sports-api:sports-api-latest
 ```
 
 ### **Set Up ECS Cluster with Fargate**
